@@ -1,0 +1,79 @@
+:root {
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+}
+
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+.course-card {
+    transition: all 0.3s ease;
+    border-radius: 15px !important;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+.course-icon i {
+    background: linear-gradient(45deg, var(--primary), #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.price-badge {
+    background: linear-gradient(45deg, var(--success), #20c997);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary), #6610f2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+footer {
+    margin-top: auto;
+}
+
+
+
+

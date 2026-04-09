@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Apexhive Academy{% endblock %}
+
+{% block content %}
+
+<style>
+       body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        .report-header { background: #667eea; color: white; padding: 20px; text-align: center; }
+        .score-card { background: white; margin: 20px 0; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .excellent { border-left: 5px solid #28a745; }
+        .good { border-left: 5px solid #ffc107; }
+        .needs-work { border-left: 5px solid #ff6b6b; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f8f9fa; font-weight: 600; }
+       .pricing-card { 
+            border: none; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease; 
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .pricing-card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        .pricing-card .card-header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            border: none; 
+            padding: 25px; 
+            text-align: center;
+        }
+        .pricing-card .card-body { padding: 30px 25px; }
+        .price-display { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            color: #198754; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .price-label { font-size: 1.1rem; color: #666; font-weight: 500; }
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { 
+            padding: 8px 0; 
+            border-bottom: 1px solid #eee; 
+            color: #555;
+        }
+        .features-list li i { color: #28a745; margin-right: 10px; width: 20px; }
+        .cta-button { 
+            border-radius: 50px; 
+            padding: 15px 30px; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(25,135,84,0.3);
+            transition: all 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(25,135,84,0.4); }</style>
+        
+<div class="hero-section bg-primary text-white py-5 mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">
+            <i class="fas fa-rocket me-3"></i>
+            Excel in Your Academics
+        </h1>
+        <p class="lead mb-4 animate__animated animate__fadeInUp">Expert tuition for Science, Mathematics, English & Programming Languages</p>
+        <a href="/courses" class="btn btn-light btn-lg px-5 py-2 me-1 my-3 animate__animated shadow-lg fw-bold animate__pulse animate__infinite">View Courses</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-outline-light btn-lg px-5 shadow-lg fw-bold animate__animated animate__pulse animate__infinite">Enroll Now</a>
+    </div>
+</div>
+
+<section id="pricing" class="py-5" class="courses">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="section-title animate__animated animate__fadeIn">Class-Wise Packages</h2>
+                    <p class="lead text-muted">Choose the perfect package for your class</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Class 5-8 Package -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Class 5-8</h3>
+                            <div class="badge bg-success fs-6 px-3 py-2">Foundation Package</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>700<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Mathematics</li>
+                                <li><i class="fas fa-check"></i>Science</li>
+                                <li><i class="fas fa-check"></i>English</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-users"></i>Flexible batches</li>
+                            </ul>
+                            <a href="" class="btn btn-success w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 9-10 Package 1 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInUp">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Class 9-10</h3>
+                            <div class="badge bg-primary fs-6 px-3 py-2">Core Subjects</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>900<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Mathematics</li>
+                                <li><i class="fas fa-check"></i>Science</li>
+                                <li><i class="fas fa-check"></i>English</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-chart-line"></i>Board exam focus</li>
+                            </ul>
+                            <a href="" class="btn btn-primary w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Select Package
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 9-10 Package 2 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInRight">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Python and SQL</h3>
+                            <div class="badge bg-info fs-6 px-3 py-2">Programming</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>800<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Python</li>
+                                <li><i class="fas fa-check"></i>SQL</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-project-diagram"></i>Projects and Practices</li>
+                                <li><i class="fas fa-laptop-code"></i>Coding Doubt Sessions</li>
+                            </ul>
+                            <a href="" class="btn btn-info w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Start Coding
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Web Development -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-header border-warning bg-warning text-dark">
+                            <h3 class="mb-1 fw-bold">Frontend Web Dev</h3>
+                            <div class="badge bg-dark fs-6 px-3 py-2">3 Month Complete Course</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4 text-warning">
+                                <i class="fas fa-rupee-sign"></i>800<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>HTML5 Complete</li>
+                                <li><i class="fas fa-check"></i>CSS3 Advanced</li>
+                                <li><i class="fas fa-check"></i>2 hours</li>
+                                <li><i class="fas fa-clock"></i>3 months course</li>
+                                <li><i class="fas fa-certificate"></i>Responsive Design</li>
+                            </ul>
+                            <a href="" class="btn btn-warning text-dark w-100 cta-button mt-4 fw-bold">
+                                <i class="fas fa-shopping-cart me-2"></i>Build Websites
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="bg-light py-5" >
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Why Choose Apexhive Academy?</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Experienced Faculty</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Personalized Learning</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Fully Accessible</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Trusted Content & Tutoring</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Admin Student Tracking</li>
+                   
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <img src="static\images\img1.jpg" alt="Students learning" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="report-header" >
+        <h1>📊 Weekly Progress Report</h1>
+        <p>Week of [Date Range] | <strong>[Student Name]</strong></p>
+    </div>
+
+    <div style="max-width: 1000px; margin: 0 auto; padding:30px;">
+        <h2>Overall Performance: <span style="color: #28a745; font-size: 1.5em;">85% 📈</span></h2>
+        
+        <div class="score-card excellent">
+            <h3>✅ Strengths</h3>
+            <p><strong>Algebra:</strong> Excellent problem-solving (92%)<br>
+            <strong>Homework:</strong> Submitted on time (100%)</p>
+        </div>
+        
+        <div class="score-card good">
+            <h3>⚡ Areas to Improve</h3>
+            <p><strong>Geometry:</strong> Practice more theorems (78%)<br>
+            <strong>Class Participation:</strong> Speak up more (85%)</p>
+        </div>
+        </div>
+        
+      <!-- RESULTS SECTION - PLACE THIS RIGHT AFTER HERO -->
+<section id="results" class="results-section" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 6rem 0; overflow: hidden;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                Proven Results Speak Louder
+            </h2>
+            <p style="font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                1547+ Students | 95% Success Rate | Top Rankers Every Year
+            </p>
+        </div>
+
+        <!-- Live Stats Counter (Most Effective!) -->
+        <div class="stats-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 4rem; text-align: center;">
+            <div class="stat-item" style="position: relative;">
+                <div class="stat-number" style="font-size: 4rem; font-weight: 800; line-height: 1; color: #ffd700; margin-bottom: 0.5rem;">0</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Students Trained</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 4rem; font-weight: 800; line-height: 1; color: #ffd700;">0</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">% Success Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 4rem; font-weight: 800; line-height: 1; color: #ffd700;">0</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Top Rankers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 4rem; font-weight: 800; line-height: 1; color: #ffd700;">0</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Years Experience</div>
+            </div>
+        </div>
+
+        <!-- RANKERS CAROUSEL (Converts 3x better!) -->
+        <div class="rankers-section" style="position: relative; margin-bottom: 4rem;">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 2.5rem; font-weight: 600;">
+                🏆 Our Top Performers (2024)
+            </h3>
+            
+            <!-- Ranker Cards -->
+            <div class="ranker-slider" style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 1rem 0; scrollbar-width: none; scroll-snap-type: x mandatory;">
+                <div class="ranker-card" style="min-width: 320px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); scroll-snap-align: start; transition: all 0.3s;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥇</div>
+                    
+                    <h4 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Aarav Sharma</h4>
+                    <p style="font-size: 1.3rem; font-weight: 700; color: #ffd700; margin-bottom: 1rem;">CBSE 10th - <strong>92.6%</strong></p>
+                    <p style="opacity: 0.9; font-size: 0.95rem;">"Apexhive Academy made complex concepts simple!"</p>
+                </div>
+
+                <div class="ranker-card" style="min-width: 320px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); scroll-snap-align: start;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥈</div>
+                    
+                    <h4 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Priya Patel</h4>
+                    <p style="font-size: 1.3rem; font-weight: 700; color: #ffd700; margin-bottom: 1rem;">9th- <strong>89%</strong></p>
+                    <p style="opacity: 0.9; font-size: 0.95rem;">"Regular tests built my confidence!"</p>
+                </div>
+
+                <div class="ranker-card" style="min-width: 320px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); scroll-snap-align: start;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥉</div>
+                    
+                    <h4 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Rahul Kumar</h4>
+                    <p style="font-size: 1.3rem; font-weight: 700; color: #ffd700; margin-bottom: 1rem;">10th <strong>90.2%</strong></p>
+                    <p style="opacity: 0.9; font-size: 0.95rem;">"Doubt clearing sessions were game-changer!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ULTIMATE CTA BUTTON (Highest Conversion!) -->
+       
+    </div>
+</section>
+
+
+
+<!-- ADD THIS JAVASCRIPT FOR ANIMATED COUNTERS (Place before </body>) -->
+<script>
+    // Animated Number Counter
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                start = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(start) + (start % 1 > 0.5 ? '+' : '');
+        }, 16);
+    }
+
+    // Trigger counters on scroll
+    window.addEventListener('scroll', () => {
+        const stats = document.querySelectorAll('.stat-number');
+        const rect = document.querySelector('.stats-row').getBoundingClientRect();
+        
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            animateCounter(stats[0], 1547);
+            animateCounter(stats[1], 95);
+            animateCounter(stats[2], 99);
+            animateCounter(stats[3], 7);
+        }
+    }, { once: true });
+</script>  
+      
+
+{% endblock %}

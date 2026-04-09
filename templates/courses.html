@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Courses & Prices - Apexhive Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        
+        .navbar { box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; }
+        .hero-section h1 { font-weight: 700; font-size: 3.5rem; }
+        .hero-section .lead { font-size: 1.3rem; opacity: 0.95; }
+        
+        .pricing-card { 
+            border: none; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease; 
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .pricing-card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        .pricing-card .card-header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            border: none; 
+            padding: 25px; 
+            text-align: center;
+        }
+        .pricing-card .card-body { padding: 30px 25px; }
+        .price-display { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            color: #198754; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .price-label { font-size: 1.1rem; color: #666; font-weight: 500; }
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { 
+            padding: 8px 0; 
+            border-bottom: 1px solid #eee; 
+            color: #555;
+        }
+        .features-list li i { color: #28a745; margin-right: 10px; width: 20px; }
+        .cta-button { 
+            border-radius: 50px; 
+            padding: 15px 30px; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(25,135,84,0.3);
+            transition: all 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(25,135,84,0.4); }
+        
+        .section-title { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .price-display { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top px-2 ">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="/">
+                <i class="fas fa-graduation-cap me-2"></i>Apexhive
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog">Register</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                📚 Complete Course Pricing
+            </h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp">
+                Affordable packages for every class • Expert faculty • Guaranteed results
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-light btn-lg px-5 py-3 fw-bold shadow-lg me-3 my-3">
+                <i class="fas fa-user-plus me-2"></i>Start Registration
+            </a>
+            <a href="#pricing" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                <i class="fas fa-arrow-down me-2"></i>View Prices
+            </a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5" >
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="section-title animate__animated animate__fadeIn">Class-Wise Packages</h2>
+                    <p class="lead text-muted">Choose the perfect package for your class</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Class 5-8 Package -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Class 5-8</h3>
+                            <div class="badge bg-success fs-6 px-3 py-2">Foundation Package</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>700<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Mathematics</li>
+                                <li><i class="fas fa-check"></i>Science</li>
+                                <li><i class="fas fa-check"></i>English</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-users"></i>Small batches</li>
+                            </ul>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-success w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 9-10 Package 1 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInUp">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Class 9-10</h3>
+                            <div class="badge bg-primary fs-6 px-3 py-2">Core Subjects</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>900<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Mathematics</li>
+                                <li><i class="fas fa-check"></i>Science</li>
+                                <li><i class="fas fa-check"></i>English</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-chart-line"></i>Board exam focus</li>
+                            </ul>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-primary w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 9-10 Package 2 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInRight">
+                        <div class="card-header">
+                            <h3 class="mb-1 fw-bold">Class 9-10</h3>
+                            <div class="badge bg-info fs-6 px-3 py-2">Programming</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4">
+                                <i class="fas fa-rupee-sign"></i>800<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>Python</li>
+                                <li><i class="fas fa-check"></i>SQL</li>
+                                <li><i class="fas fa-clock"></i>2 hours </li>
+                                <li><i class="fas fa-project-diagram"></i>Real projects</li>
+                                <li><i class="fas fa-laptop-code"></i>Live coding</li>
+                            </ul>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-info w-100 cta-button mt-4">
+                                <i class="fas fa-shopping-cart me-2"></i>Enrolll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Web Development -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="pricing-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-header border-warning bg-warning text-dark">
+                            <h3 class="mb-1 fw-bold">Frontend Web Dev</h3>
+                            <div class="badge bg-dark fs-6 px-3 py-2">3 Month Complete Course</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-display mb-4 text-warning">
+                                <i class="fas fa-rupee-sign"></i>800<small class="fs-6">/month</small>
+                            </div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i>HTML5 Complete</li>
+                                <li><i class="fas fa-check"></i>CSS3 Advanced</li>
+                                 <li><i class="fas fa-clock"></i>2 hours </li>
+                                
+                                <li><i class="fas fa-check"></i>Responsive Design</li>
+                                <li><i class="fas fa-clock"></i>3 months course</li>
+                                
+                            </ul>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-warning text-dark w-100 cta-button mt-4 fw-bold">
+                                <i class="fas fa-shopping-cart me-2"></i>Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-5 mt-5">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Excel? 🚀</h2>
+            <p class="lead mb-4" style="margin-right: 10px;">Join 500+ students who improved their grades</p>
+            <a " href="https://docs.google.com/forms/d/e/1FAIpQLSe0CmyhQ5tmiuWNLEqvQ_W5aQX_DeRxwfItMl24QZKowkZufg/viewform?usp=dialog" class="btn btn-light btn-lg px-5 py-2 fw-bold shadow-lg">
+                <i class="fas fa-user-plus me-3"></i>Enroll Today - Limited Seats!
+            </a>
+        </div>
+    </section>
+
+
+    
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-graduation-cap"></i> Apexhive Academy</h5>
+                    <p>Empowering students with quality education in Science, English, Mathematics, Programming Languages and Frontend Development Technologies</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2024 Apexhive Coaching. All rights reserved.</p>
+                    <p>Contact : <a href="tel:+919608503878">9608503878</a></p>
+                    <p>Email : <a href="mailto: modassirh06@gmail.com">Send mail</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+
+    
+</body>
+</html>
