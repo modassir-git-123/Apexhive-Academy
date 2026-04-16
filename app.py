@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import json
 import os
 from datetime import datetime
+import threading
+import requests
+import time
 
 app = Flask(__name__)
 app.secret_key = 'super-secret-2024'
@@ -74,3 +77,17 @@ if __name__ == '__main__':
 
 
     
+
+def keep_alive():
+    # Replace with your actual Render URL
+    URL = "https://apexhive-academy.onrender.com"
+    while True:
+        try:
+            requests.get(URL)
+            print("✅ Keep-alive ping sent")
+        except Exception as e:
+            print(f"❌ Ping failed: {e}")
+        time.sleep(840) # 14 minutes
+
+# Start the pinging in a separate thread
+threading.Thread(target=keep_alive, daemon=True).start()
